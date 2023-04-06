@@ -1,9 +1,9 @@
 # CPSC 449 Midterm Project
 
 ## Table of Contents
-1. [Demonstration](##Demonstration)
-2. [Objective](##Objective)
-3. [Members](##Members)
+1. [Demonstration](https://github.com/Phuoc-Nguyen-CS/449_MidtermProject#demonstration)
+2. [Objective](https://github.com/Phuoc-Nguyen-CS/449_MidtermProject#objective)
+3. [Members](https://github.com/Phuoc-Nguyen-CS/449_MidtermProject#members)
 
 
 ## Submission Checklist:
