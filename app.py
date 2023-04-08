@@ -1,8 +1,4 @@
 ''' Midterm Project
-Task 1: Setting up the Flask application
-    ● Create a new Flask application and set up the necessary packages and modules.
-    ● Create a virtual environment for the application.
-    ● Connect your Flask application with the Database (MySQL preferably.)
 Task 2: Error Handling
     ● Implement error handling for your API to ensure that it returns proper error
     messages and status codes.
@@ -29,16 +25,22 @@ Task 5: Public Route
 '''
 from flask import Flask, render_template, request, redirect, url_for, session, abort
 import pymysql
+import re
 from flask_cors import CORS
 
-app = Flask(__name__)
+# (New) Importing flask_jwt_extended for JWT authentication
+from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required, JWTManager
 
+app = Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
-app.secret_key = 'secret'
+# app.secret_key = 'secret'
+
+# (New) setting up some configs for the flask_jwt_extended
+app.config['JWT_SECRET_KEY'] = 'secret'
+jwt = JWTManager(app)
 
 # Establishing the connection to the MYSQL server
-
 conn = pymysql.connect(
         host='localhost', 
         user='root', 
@@ -49,6 +51,30 @@ conn = pymysql.connect(
 cur = conn.cursor()
 
 @app.route('/')
-@app.route('/test')
+@app.route('/test', methods=['GET', 'POST'])
 def test():
-    return render_template('test.html')
+    msg = ''
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+        print('In Register')
+        username = request.form['username']
+        password = request.form['password']
+        cur.execute('SELECT * FROM accounts WHERE username= % s', (username))
+        account = cur.fetchone()
+        print(account)
+        conn.commit()
+        # Error Checking
+        if account:
+            msg = 'Account already exists'
+        # Use regular expression to ensure only English letters and numbers are allowed
+        elif not re.match(r'[A-Za-z0-9]+', username):
+            msg = 'Username is not valid. Please use only english letters and numbers!'
+        else:
+            cur.execute('INSERT INTO accounts VALUES (NULL, % s, % s)', (username, password))
+            conn.commit()
+            print('Inserted into database')
+
+            msg = 'You have successfully registered !'
+    elif request.method == 'POST':
+        msg = 'Please fill out the form !'
+    
+    return render_template('test.html', msg = msg)
