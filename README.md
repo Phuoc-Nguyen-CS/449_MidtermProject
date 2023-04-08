@@ -32,7 +32,7 @@ are necessary.
 ### Task 4: File Handling
 * **Implement file handling** for your API to allow users to upload files.
 * **Create an endpoint** that allows users to upload files. 
-* **Implement file validation** to ensuree that files are uploading within the eallowed file size limit.
+* **Implement file validation** to ensure that files are uploading within the allowed file size limit.
 * **Store uploaded files** in a secure location. (A folder in your project's folder structure.)
 ### Task 5: Public Route
 * **Create a public route** that allows users to view public information.
