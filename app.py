@@ -16,7 +16,7 @@ Task 4: File Handling
     ● Implement file validation to ensure that only certain file types are allowed.
     ● Implement file size validation to ensure that files are uploaded within the allowed
     file size limit.
-    ● Store uploaded files in a secure location. (A folder in your project’s folder
+    ● Store uploaded files in a secure location. (A folder in your project's folder
     structure.)
 Task 5: Public Route
     ● Create a public route that allows users to view public information.
@@ -51,8 +51,8 @@ conn = pymysql.connect(
 cur = conn.cursor()
 
 @app.route('/')
-@app.route('/test', methods=['GET', 'POST'])
-def test():
+@app.route('/register', methods=['GET', 'POST'])
+def register():
     msg = ''
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
         print('In Register')
@@ -77,4 +77,23 @@ def test():
     elif request.method == 'POST':
         msg = 'Please fill out the form !'
     
-    return render_template('test.html', msg = msg)
+    return render_template('register.html', msg = msg)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    msg = ''
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+        username = request.form['username']
+        password = request.form['password']
+        cur.execute('SELECT * FROM accounts WHERE username = % s and password = % s', (username, password))
+        conn.commit()
+        account = cur.fetchone()
+        msg = 'Successfully logged in'
+        print('Success in login')
+    else:
+         msg = 'Incorrect username/password! '
+         
+    return render_template('login.html', msg = msg)
+
+if __name__ == "__main__":
+	app.run(host ="localhost", port = int("5000"), debug=True)
