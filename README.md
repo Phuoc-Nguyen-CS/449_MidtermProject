@@ -3,10 +3,10 @@
 ## Table of Contents
 1. [Demonstration](https://github.com/Phuoc-Nguyen-CS/449_MidtermProject#demonstration)
 2. [POSTMAN](https://github.com/Phuoc-Nguyen-CS/449_MidtermProject#postman)
-- [Register](https://github.com/Phuoc-Nguyen-CS/449_MidtermProject#register)
-- [Login](https://github.com/Phuoc-Nguyen-CS/449_MidtermProject#login)
-- [Upload](https://github.com/Phuoc-Nguyen-CS/449_MidtermProject#upload)
-- [Uploaded](https://github.com/Phuoc-Nguyen-CS/449_MidtermProject#uploaded)
+   - [Register](https://github.com/Phuoc-Nguyen-CS/449_MidtermProject#register)
+   - [Login](https://github.com/Phuoc-Nguyen-CS/449_MidtermProject#login)
+   - [Upload](https://github.com/Phuoc-Nguyen-CS/449_MidtermProject#upload)
+   - [Uploaded](https://github.com/Phuoc-Nguyen-CS/449_MidtermProject#uploaded)
 3. [Objective](https://github.com/Phuoc-Nguyen-CS/449_MidtermProject#objective)
 4. [Members](https://github.com/Phuoc-Nguyen-CS/449_MidtermProject#members)
 
