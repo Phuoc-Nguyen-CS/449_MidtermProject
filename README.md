@@ -13,6 +13,11 @@
 
 ## Demonstration:
 
+Uploading File Demo Video:
+[![](https://i0.wp.com/css-tricks.com/wp-content/uploads/2015/11/drag-drop-upload-1.gif?ssl=1)](https://www.youtube.com/watch?v=dz6Oh0MD9Ds&ab_channel=PhuocNguyen)
+
+
+
  
 ## Objective:
 ### Task 1: Setting up the Flask application
