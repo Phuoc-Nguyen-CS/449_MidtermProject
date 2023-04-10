@@ -11,6 +11,19 @@
  - [ ] Include one screenshot including all the endpoints listed in POSTMAN.
  - [ ] Your submission should include a video demonstrating the working of authentication and file handling endpoints
 
+## POSTMAN:
+### Register
+![Register](./pictures/register.png)
+
+### Login
+![Login](./pictures/login.png)
+
+### Upload
+![Upload](./pictures/upload.png)
+
+### Uploaded
+![Uploaded](./pictures/uploaded.png)
+
 ## Demonstration:
 
 Uploading File Demo Video:
