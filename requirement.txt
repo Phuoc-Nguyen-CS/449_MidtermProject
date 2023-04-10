@@ -1,0 +1,7 @@
+Packages used:
+
+**Basically all the pip installs we used in class**
+
+pip install venv
+pip install flask
+pip install pymsql
