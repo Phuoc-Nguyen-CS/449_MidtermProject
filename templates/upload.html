@@ -1,0 +1,15 @@
+<html>
+    <title>
+        Upload
+    </title>
+    <h1>Upload</h1>
+    <p>Feel free to upload any ['.jpg', '.png', '.gif', '.txt', '.pdf'] files</p>
+    <body>
+        <form action = "{{ url_for('upload')}}" method = "POST" enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+         </form>
+    </body>
+    <div class="msg">{{ msg }}</div>
+    <a href="{{url_for('viewFiles')}}">View files here!</a>
+</html>

@@ -36,7 +36,7 @@ are necessary.
 * **Store uploaded files** in a secure location. (A folder in your project's folder structure.)
 ### Task 5: Public Route
 * **Create a public route** that allows users to view public information.
-* **Implement an endpoint** that returns a list of items that can be **viewed pubicly.**
+* **Implement an endpoint** that returns a list of items that can be **viewed publicly.**
 * Ensure that this **endpoint does not require authentication.**
 
 ## Members:

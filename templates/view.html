@@ -1,0 +1,16 @@
+<title>
+    Uploaded Files
+</title>
+<h1>Files</h1>
+<p>Feel free to view any of the user uploaded files</p>
+<ul>
+    {% for file in files %}
+    <li>
+        <!-- Basically, if path does not contain / add / else don't add anything -->
+        <a href = "{{ (request.path + '/' if request.path != '/' else '') + file }}" >
+            {{ (request.path + '/' if request.path != '/' else '' ) + file }}
+        </a>
+    </li>
+    <br>
+    {% endfor %}
+</ul>
